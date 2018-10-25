@@ -1,3 +1,5 @@
+/* @group ----- Mixins ----- */
+
 @mixin button {
     font-family: $body-font;
     font-size: $base-font-size;
@@ -24,6 +26,13 @@
         color: #999;;
     }
 }
+
+@mixin de-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* @end */
 
 /* @group ----- Generic HTML elements ----- */
 * {
