@@ -227,144 +227,198 @@ nav ul {
 
 /* @group ----- Header ----- */
 
-header {
-    max-width: 960px;
-    margin: 0 auto;
-    color: #e7e7e7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: $spacing-m $spacing-l;
-    flex-wrap: wrap;
+#skipnav {
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    background-color: #fff;
+    padding: $spacing-s;
+    display: inline-block;
 
-    &:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -9999px;
-        right: -9999px;
-        bottom: 0;
-        background-color: #000;
-        z-index: -1;
+    &:focus {
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
-header a:link,
-header a:visited {
-    color: #fff;
+header nav .navigation {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    padding: ($spacing-s - 1px) 0;
+    margin: $spacing-l 0;
 }
 
-header .site-title {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: auto;
+header nav li {
+    display: block;
+    margin: 0 .5em;
 }
 
-header .site-title img {
+header nav li ul {
+    display: none;
+}
+
+header nav a {
+    font-size: .875 * $base-font-size;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.site-title {
+    font-size: 1.5 * $base-font-size;
+    text-transform: uppercase;
+    letter-spacing: .125em;
+    margin: (2 * $spacing-l) 0 0;
+    display: block;
+    vertical-align: top;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.site-title img {
+    max-height: (3 * $spacing-l);
+    max-width: 100%;
+}
+
+#header-image img {
+    max-width: 100%;
     vertical-align: top;
 }
 
-header h1 {
-    margin: $spacing-s $spacing-l $spacing-s 0;
-    font-size: 1.25 * $base-font-size;
+#search-container {
+    position: absolute;
+    top: -(2 * $spacing-l);
+    right: gutter();
+}
+
+#search-container input[type="text"],
+#search-container button {
+    border: 0;
+    border-bottom: 1px solid $gray;
+    background-color: #fff;
+    height: 1.5 * $base-line-height;
+    display: inline-block;
     line-height: $base-line-height;
-}
-
-header nav {
-    padding: $spacing-l;
-    font-size: .875 * $base-font-size;
-    line-height: .75 * $base-line-height;
-}
-
-header nav ul {
-    padding-left: 0;
-}
-
-header nav > ul > li {
-    // Top-level items
-    border-bottom: 1px solid #cacaca;
-    padding-bottom: $spacing-m - 1px;
-    margin-bottom: $spacing-m;
-
-    &:last-child {
-        border-bottom: 0;
-    }
-}
-
-header nav > ul > li > ul li {
-    // 2nd-level items and beyond
-    padding-left: $spacing-m;
-    text-indent: -$spacing-m;
-    margin: $spacing-s 0;
-
-    &:before {
-        content: "\2014";
-        color: #000;
-        width: $spacing-m;
-        display: block;
-        float: left;
-    }
-}
-
-header nav ul ul ul {
-    display: block;
-}
-
-header nav a:link,
-header nav a:visited {
-    color: #000;
+    padding: $spacing-s;
+    vertical-align: bottom;
+    background-color: #fff;
+    color: #676767;
 }
 
 #search-form {
-    border: 1px solid #fff;
-    border-radius: 2px;
-    margin: 0 $spacing-m 0 0;
-    height: 1.5 * $spacing-l;
-    overflow: hidden;
     display: flex;
+    padding: $spacing-s $spacing-m $spacing-m;
+    box-shadow: 0 0 0 1px #dedede inset;
+    background: #fff;
 }
 
-#search-form > * {
-    vertical-align: top;
+#search-form.closed {
+    width: 1.5 * $base-line-height;
+    height: 1.75 * $base-line-height;
 }
 
-#search-form input[type="text"] {
-    background-color: #000;
-    color: #fff;
-    border: 0;
+#search-form.open {
+    right: 1.5 * $base-line-height;
+    position: absolute;
 }
 
-#search-form button[type="submit"] {
-    margin-left: 0;
-    text-indent: -9999px;
-    position: relative;
+#search-form + button.search-toggle {
+    bottom: 0;
+    position: absolute;
+    width: 1.5 * $base-line-height;
+    height: 1.5 * $base-line-height;
+    border-bottom: 0;
+    color: darken($gray, 15%);
+}
 
-    &:before {
+#search-form.closed + .search-toggle {
+    right: 0;
+    border: 1px solid $gray;
+    border-top: 0;
+
+    &:after {
         content: "\f002";
         font-family: "Font Awesome 5 Free";
-        text-indent: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        line-height: 1.5 * $base-line-height;
     }
 }
 
-#search-form button,
-#menu-button {
-    border: 1px solid #fff;
-    border-radius: 2px;
-    width: 1.5 * $spacing-l;
-    height: 1.5 * $spacing-l;
-    text-align: center;
-    font-size: 18px;
+#search-form.open + .search-toggle {
+    top: $spacing-s;
+    right: 0;
+
+    &:after {
+        content: "\f00d";
+        font-family: "Font Awesome 5 Free";
+    }
+}
+
+#search-form.closed [type="text"],
+#search-form.closed [type="submit"],
+#search-form.closed #advanced-form {
+    display: none;
 }
 
 #search-form button {
-    border-width: 0px 0px 0px 1px;
-    border-radius: 0;
+    width: 1.5 * $base-line-height;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: relative;
+
+    &:after {
+        content: "\f002";
+        font-family: "Font Awesome 5 Free";
+        position: absolute;
+        top: $spacing-s;
+        right: 0;
+        text-indent: 0;
+        width: 1.5 * $base-line-height;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
+#query:focus {
+    position: relative;
+    z-index: 1;
+}
+
+#advanced-form {
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    padding: $spacing-m;
+    right: 0;
+    left: 0;
+    border: 1px solid $gray;
+    border-top: 0;
+}
+
+#advanced-form fieldset {
+    margin-bottom: $spacing-m;
+}
+
+#advanced-form fieldset input {
+    margin-right: $spacing-s;
+}
+
+#advanced-form p {
+    margin: 0;
+}
+
+#content .blocks > h2:first-of-type {
+    text-align: center;
+    font-size: 2 * $base-font-size;
+    margin-bottom: $spacing-l;
+    line-height: 2 * $base-line-height;
+    font-weight: normal;
 }
 
 /* @end */
@@ -372,10 +426,14 @@ header nav a:visited {
 /* @group ----- Footer ----- */
 
 footer {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: $spacing-l;
-    overflow: hidden;
+    margin-top: (2 * $spacing-l);
+    clear: both;
+}
+
+#bottom-nav li {
+    display: inline-block;
+    margin-right: 1em;
+    font-size: .875 * $base-font-size;
 }
 
 /* @end */
