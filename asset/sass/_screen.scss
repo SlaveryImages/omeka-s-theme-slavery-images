@@ -921,8 +921,7 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show .property .language {
-    background-color: $light;
-    padding: 0 $spacing-s;
+	display: none;
 }
 
 .resource-link img {
