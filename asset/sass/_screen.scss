@@ -225,6 +225,46 @@ nav ul {
 
 /* @end */
 
+/* @group ----- Navigation ----- */
+
+nav .navigation,
+nav ul {
+    @include de-list;
+}
+
+.item-pagination.navigation {
+    border-top: 1px solid $gray;
+    padding-top: $spacing-m - 1px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.secondary-nav {
+    text-align: center;
+}
+
+.secondary-nav ul {
+    margin: 0 0 -1px;
+    border-bottom: 1px solid $gray;
+    padding-bottom: -1px;
+}
+
+.secondary-nav.navigation li {
+    display: inline-block;
+    margin-right: .5em;
+    padding-bottom: $spacing-m;
+
+    &.active a {
+        color: $red;
+    }
+}
+
+.secondary-nav a {
+    color: #676767;
+}
+
+/* @end */
+
 /* @group ----- Header ----- */
 
 #skipnav {
