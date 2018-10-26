@@ -161,6 +161,17 @@ p {
 
 /* @group ----- Containers ----- */
 
+#wrap {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 gutter();
+    position: relative;
+}
+
+#wrap {
+    padding-bottom: 2 * $spacing-l;
+}
+
 @mixin container {
     max-width: 960px;
     margin: 0 auto;
