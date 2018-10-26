@@ -45,7 +45,7 @@ console_log($itemMedia);
             $manifest_url = $this->iiifUrl($item) ;
             $mirador_url = "http://mirador.britishart.yale.edu/?manifest=$manifest_url";
         ?>
-        <a href="<?php echo $mirador_url; ?>">View in Mirador</a>
+        <a href="<?php echo $mirador_url; ?>" target="_blank">View in Mirador</a>
     <?php endforeach; ?>
 </div>
 
