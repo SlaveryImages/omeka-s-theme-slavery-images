@@ -984,9 +984,7 @@ ul.resource-list .resource img ~ * {
 }
 
 .resource.show .media-list .resource-name {
-    word-wrap: break-word;
-    margin-top: $spacing-s;
-    display: block;
+    display: none;
 }
 
 .resource.show .media-list ~ * {
