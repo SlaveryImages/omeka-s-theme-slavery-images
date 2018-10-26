@@ -1,19 +1,33 @@
-// Typography
-$base-font-size: 16px;
+//Typography
+
+$base-font-size: 18px;
 $base-line-height: 24px;
+$body-font: #{$base-font-size}/#{$base-line-height} "Crimson Text", serif;
+$heading-font: 2 * $base-font-size "Crimson Text", serif;
 
-$heading-font: "Bitter", serif;
-$body-font: "Lora", serif;
-
-// Spacing
+//Spacing
 
 $spacing-s: .25 * $base-line-height;
 $spacing-m: .5 * $base-line-height;
 $spacing-l: $base-line-height;
 
+//Colors
+
+$red: #C72E2E;
+$gray: #dedede;
+$accent: #089494;
 // Colors
 
 $light: rgba(0,0,0,.08);
-$gray: #eee;
 $bold: rgba(0,0,0,.15);
 $accent: #089494;
+
+
+//Susy
+$susy: (
+  columns: 16,
+  gutters: 1/4,
+  math: fluid,
+  output: float,
+  gutter-position: inside,
+);
