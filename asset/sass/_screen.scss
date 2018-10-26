@@ -34,76 +34,47 @@
 
 /* @end */
 
-/* @group ----- Generic HTML elements ----- */
+/* generic html elements */
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    font-family: $body-font;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: $heading-font;
-}
-
-h1 {
-    font-size: 2 * $base-font-size;
-    margin: $spacing-m 0;
-    line-height: 2 * $base-line-height;
-}
-
-h2 {
-    font-size: 1.75 * $base-font-size;
-    margin: $spacing-m 0;
-    line-height: 2 * $base-line-height;
-}
-
-h3 {
-    font-size: 1.5 * $base-font-size;
-    margin: $spacing-m 0;
-}
-
-h4 {
-    font-size: 1.25 * $base-font-size;
-    margin: $spacing-m 0;
+    font: #{$base-font-size}/#{$base-line-height} "Crimson Text", serif;
+    color: #676767;
 }
 
 a {
-    color: $accent;
-}
-
-a:link,
-a:visited {
+    color: $red;
     text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
-p a,
-span a,
-div a {
-    text-decoration: underline;
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
+h1 {
+    text-align: center;
+    font-size: 2 * $base-font-size;
+    margin-bottom: $spacing-l;
+    line-height: 2 * $base-line-height;
+    font-weight: normal;
 }
 
-th {
-    border-bottom: 3px solid #000;
-    padding: $spacing-s;
+h2 {
+    font-size: 1.5 * $base-font-size;
+    margin-bottom: $spacing-l;
+    line-height: 2 * $base-line-height;
+    font-weight: normal;
 }
 
-td {
-    border-bottom: 1px solid darken($gray, 15%);
-    padding: $spacing-s;
+p {
+    margin: $spacing-l 0;
 }
 
     /* @group ----- Form elements ----- */
