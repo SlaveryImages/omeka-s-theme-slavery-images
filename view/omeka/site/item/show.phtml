@@ -40,9 +40,17 @@ console_log($itemMedia);
     <?php foreach ($itemMedia as $media): ?>
         <?php console_log($media->linkPretty()); ?>
         <?php echo $media->linkPretty('large'); ?>
+
+        <?php 
+            $manifest_url = $this->iiifUrl($item) ;
+            $mirador_url = "http://mirador.britishart.yale.edu/?manifest=$manifest_url";
+        ?>
+        <a href="<?php echo $mirador_url; ?>">View in Mirador</a>
     <?php endforeach; ?>
 </div>
+
 <?php endif; ?>
+
 
 <?php
 $page = $this->params()->fromQuery('page', 1);
