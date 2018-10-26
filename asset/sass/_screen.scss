@@ -325,6 +325,7 @@ header a {
 }
 
 #search-container {
+	display: none;
     position: absolute;
     top: -(2 * $spacing-l);
     right: gutter();
