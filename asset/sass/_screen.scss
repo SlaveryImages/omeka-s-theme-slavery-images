@@ -574,7 +574,7 @@ footer {
 
 /* @group ----- Pages ----- */
 
-.page .site-page-pagination {
+.page {
     border-top: 1px solid $gray;
     padding-top: $spacing-m - 1px;
     margin-top: 2 * $spacing-l;
@@ -583,6 +583,10 @@ footer {
     a:last-child:not(:only-child) {
         margin-left: $spacing-l;
     }
+}
+
+.site-page-pagination {
+  visibility: hidden;
 }
 
 .page #content {
