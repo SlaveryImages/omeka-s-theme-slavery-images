@@ -583,246 +583,164 @@ footer {
 
 /* @end */
 
-/* @group ----- Page and Blocks ----- */
+/* @group ----- Pages ----- */
 
-#content {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: $spacing-l;
-    overflow: hidden;
+.page .site-page-pagination {
+    border-top: 1px solid $gray;
+    padding-top: $spacing-m - 1px;
+    margin-top: 2 * $spacing-l;
+    width: 100%;
+
+    a:last-child:not(:only-child) {
+        margin-left: $spacing-l;
+    }
 }
 
-#content > *:first-child {
-    margin-top: 0;
+.page #content {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-nav.breadcrumbs {
-    padding: 6px;
-    border-radius: 2px;
-    margin: 12px 0;
-    background-color: #e7e7e7;
+.page #content .breadcrumbs {
+    width: 100%;
 }
 
-.sub-menu ul {
-    padding-left: 0;
+.page #content .breadcrumbs + .blocks {
+    width: 100%;
+}
+
+.page #content .sub-menu {
+    padding: 0 gutter() $spacing-l 0;
+    width: span(2 of 16);
+}
+
+.page #content .sub-menu ~ *:not(.site-page-pagination) {
+    width: span(14 of 16);
+}
+
+.page #content .sub-menu > ul {
     margin: 0;
 }
 
-.sub-menu li {
-    display: inline-block;
+.page #content .sub-menu a {
+    font-size: .875 * $base-font-size;
+    color: #676767;
 }
 
-.sub-menu a {
-    @include button;
+.page #content .sub-menu .current a {
+    color: $red;
+}
+
+.page #content .sub-menu > ul > li {
+    padding: $spacing-s - 1px;
+}
+
+.page #content .sub-menu > ul > li:not(:last-of-type) {
+    border-bottom: 1px solid $gray;
     margin-bottom: $spacing-s;
 }
 
-.item-showcase {
-    margin: $spacing-l 0 ($spacing-l - 1px);
-    border-top: 1px solid $light;
-    border-bottom: 1px solid $light;
-    padding: ($spacing-l - 1px) 0 0;
-    overflow: hidden;
-    text-align: center;
-    clear: both;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.page #content .sub-menu h4 {
+    border-bottom: 1px solid $gray;
+    padding-bottom: $spacing-s - 1px;
+    margin: 0 0 $spacing-s;
 }
 
-.item.resource .caption {
-    font-size: .75 * $base-font-size;
-    line-height: $base-line-height;
-
-    * {
-        margin: 0 0 $spacing-l 0;
-    }
-
-    & > *:last-child {
-        margin-bottom: 0;
-    }
-}
-
-.item-showcase .resource.item {
-    display: inline-block;
-    vertical-align: top;
-    margin-bottom: $spacing-l;
-
-    img {
-        margin-right: $spacing-m;
-    }
-
-    &:only-child img {
-        margin: 0 auto;
-    }
-
-    &:not(:only-child) {
-        width: 33.33%;
-        clear: none;
-        padding: 0 $spacing-s;
-    }
-
-    &:not(:only-child) h3 {
-        clear: left;
-        font-size: .75 * $base-font-size;
-        line-height: $base-line-height;
-        margin: $spacing-m 0 0;
-    }
-
-    &:not(:only-child) img {
-        max-width: 100%;
-        height: auto;
-        float: none;
-        margin-right: 0;
-        vertical-align: top;
-    }
-}
-
-.right,
-.left {
-    overflow: hidden;
-}
-
-.left .item.resource,
-.right .item.resource {
-    margin: 0 0 $spacing-l 0;
-    width: -webkit-min-content;
-    width: -moz-min-content;
+.file,
+.item-showcase .resource {
     width: min-content;
-    max-width: 40vw;
+}
 
-    .media-render a {
-        vertical-align: top;
-    }
-
-    .media-render > *, img {
-        max-width: 40vw;
-    }
+.item-showcase .resource,
+.file .resource {
+    display: flex;
+    flex-direction: column;
+    flex-basis: content;
+    width: min-content;
+    max-width: 100%;
+    margin: 0 $spacing-l $spacing-l;
 
     img {
-        vertical-align: top;
-        margin-bottom: $spacing-m;
+        max-width: 100%;
+    }
+
+    & > a:first-child,
+    & .media-render > a:first-child {
+        width: max-content;
+        max-width: 100%;
     }
 }
 
-.left:not(.file) .item.resource,
-.right:not(.file) .item.resource {
-    max-width: 50%;
+.item-showcase .resource h3,
+.file .resource h3 {
+    font-size: $base-font-size;
+    margin: (.5 * $base-line-height) 0 0;
 }
 
-/* IE 10 - Edge min-content equivalent */
-.file {
-    display: -ms-grid;
-    -ms-grid-columns: min-content;
+.page .media-render {
+    display: flex;
+    flex-basis: min-content;
+}
+
+.page .media-render a {
+    display: block;
+}
+
+.page .media-render img {
+    vertical-align: top;
 }
 
 .left.file {
     float: left;
-    clear: left;
-    margin-right: $spacing-l;
+    margin: 0 $spacing-l $spacing-l 0;
 }
 
 .right.file {
     float: right;
-    clear: right;
-    margin-left: $spacing-l;
+    margin: 0 0 $spacing-l $spacing-l;
 }
 
-.left .item.resource > a:first-child,
-.right .item.resource > a:first-child {
-    vertical-align: top;
-}
-
-.medium .item.resource > h3,
-.square .item.resource > h3 {
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-}
-
-.left .item.resource + p,
-.right .item.resource + p {
-    margin-top: 0;
-}
-
-.break {
+.item-showcase {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     clear: both;
-    border-bottom: 1px solid $gray;
-    padding-bottom: -1px;
+    justify-content: center;
     margin: $spacing-l 0;
-
-    &.transparent {
-        border-color: transparent;
-    }
-
-    &.opaque {
-        border-color: $light;
-    }
 }
 
 .preview-block {
     margin: $spacing-l 0;
-    overflow: hidden;
-    clear: both;
 }
 
-.resource-list.preview + a {
-    background-color: #000;
-    text-align: center;
-    padding: $spacing-s;
-    border-radius: 2px;
-    color: $gray;
-    line-height: $base-line-height;
-    display: inline-block;
-    font-weight: bold;
+.preview-block .description {
+    max-height: 6 * $base-line-height;
+    overflow: hidden;
+    position: relative;
 
-    &:hover {
-        background-color: $accent;
-        color: #fff;
-        border-bottom-width: 0px;
+    &:after {
+        content: "";
+        position: absolute;
+        height: 2 * $base-line-height;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-image: linear-gradient(to bottom, transparent, #ffffff 100%);
     }
 }
 
-.resource-list .resource > *:only-child {
-    margin-bottom: 0;
+.breadcrumbs {
+    margin-bottom: $spacing-l;
 }
 
-.toc-block > ul {
-    margin: $spacing-l 0;
-    list-style-type: none;
-    border-left: 5px solid $gray;
-}
-
-.toc-block > ul > li {
-    margin-bottom: $spacing-m;
-}
-
-.toc-block > ul > li > a {
-    font-weight: bold;
-}
-
-.toc-block ul ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.toc-block ul ul ul {
-    padding-left: 1.25em;
-}
-
-.toc-block ul ul li:before {
-    content: "\2014";
-    color: $light;
-}
-
-.site-page-pagination {
+.item-with-metadata .resource.show {
     clear: both;
-    margin-top: $spacing-l;
-    color: #fff;
+    margin: (2 * $spacing-l) 0;
+    overflow: hidden;
 }
 
-.site-page-pagination a {
-    @include button;
+.caption > *:first-child {
+    margin-top: $spacing-m;
 }
 
 /* @end */
