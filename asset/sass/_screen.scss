@@ -1,29 +1,20 @@
 /* @group ----- Mixins ----- */
 
-@mixin button {
-    font-family: $body-font;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    background-color: #000;
-    text-align: center;
-    padding: $spacing-s;
-    border-radius: 2px;
-    color: $gray;
-    line-height: $base-line-height;
-    display: inline-block;
-    font-weight: bold;
+@mixin button,
+.button,
+input[type="submit"] {
+    background-color: $gray;
     border: 0;
     cursor: pointer;
+    padding: $spacing-s;
+}
+
+a.button {
+    color: #000;
+    display: inline-block;
 
     &:hover {
-        background-color: $accent;
-        color: #fff;
-        border-bottom-width: 0px;
-    }
-
-    &.inactive {
-        background-color: $light;
-        color: #999;;
+        text-decoration: none;
     }
 }
 
