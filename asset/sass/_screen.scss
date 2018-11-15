@@ -1,8 +1,6 @@
 /* @group ----- Mixins ----- */
 
-@mixin button,
-.button,
-input[type="submit"] {
+@mixin button {
     background-color: $gray;
     border: 0;
     cursor: pointer;
