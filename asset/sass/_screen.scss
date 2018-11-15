@@ -603,7 +603,7 @@ footer {
 }
 
 .page #content .sub-menu {
-    padding: 0 gutter() $spacing-l 0;
+    padding: $spacing-l gutter() $spacing-l 0;
     width: span(2 of 16);
 }
 
