@@ -1050,32 +1050,47 @@ a.advanced-search {
 
 /* @group ----- Advanced Search ----- */
 
-#advanced-search .inputs .value {
+#advanced-search select {
     margin-bottom: $spacing-m;
 }
 
-.remove-value.button {
-    width: 1.5 * $spacing-l;
-    height: 1.5 * $spacing-l;
-    position: relative;
-    margin-left: $spacing-s;
+#advanced-search {
+    padding: $spacing-l 0;
+}
+
+#advanced-search input[type="text"] {
+    height: 1.25 * $base-line-height;
+}
+
+#advanced-search input[type="submit"] {
+    font-size: 1.25 * $base-font-size;
+    padding: $spacing-s;
+}
+
+#advanced-search .remove-value {
     text-indent: -9999px;
+    position: relative;
+    width: 1.25 * $spacing-l;
+    height: 1.25 * $spacing-l;
+    margin-left: $spacing-s;
 
     &:before {
+        content: "\f014";
         text-indent: 0;
         position: absolute;
         top: 0;
-        bottom: 0;
-        right: 0;
         left: 0;
-        padding: $spacing-s;
-        line-height: $base-line-height;
+        right: 0;
+        bottom: 0;
+        line-height: 1.25 * $base-line-height;
     }
 }
 
-.query-property {
-    width: 30%;
+.search-entry:not(:first-child) {
+    margin-top: $spacing-m;
 }
+
+/* @end */
 
 /* @end */
 
