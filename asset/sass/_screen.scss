@@ -741,6 +741,7 @@ footer {
 /* @group ----- Resource List ----- */
 
 ul.resource-list {
+    columns: 3;
     list-style-type: none;
     padding-left: 0;
 }
