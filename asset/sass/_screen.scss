@@ -749,7 +749,7 @@ ul.resource-list {
 ul.resource-list .resource {
     width: 200px;
     min-height: 250px;
-    border: 1px solid #000;
+    //border: 1px solid #000;
     display: -moz-inline-stack;
     display: inline-block;
     vertical-align: top;
@@ -758,7 +758,7 @@ ul.resource-list .resource {
     *display: inline;
     _height: 250px;
 
-    border-bottom: 1px solid $light;
+    //border-bottom: 1px solid $light;
     padding-bottom: $spacing-l - 1px;
     margin: $spacing-l 0;
     overflow: hidden;
@@ -769,16 +769,17 @@ ul.resource-list .resource {
     }
 
     &:first-child {
-        border-top: 1px solid $light;
-        padding-top: $spacing-l - 1px;
+        //border-top: 1px solid $light;
+        //padding-top: $spacing-l - 1px;
     }
 }
 
 ul.resource-list .resource img {
     height: auto;
-    width: 4 * $spacing-l;
-    float: right;
-    margin-left: $spacing-m;
+    //width: 100%
+    //width: 4 * $spacing-l;
+    //float: right;
+    //margin-left: $spacing-m;
 }
 
 ul.resource-list .resource h4 {
