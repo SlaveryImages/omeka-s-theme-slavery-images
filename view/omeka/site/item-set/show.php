@@ -2,7 +2,7 @@
 <?php $this->htmlElement('body')->appendAttribute('class', 'item-set resource browse'); ?>
 
 <?php echo $this->pageTitle($this->translate('Item sets'), 2); ?>
-HI
+<?php echo $this->pageTitle($this->translate('Item sets'), 2); ?>
 <?php echo $this->searchFilters(); ?>
 <?php echo $this->hyperlink($this->translate('Advanced search'), $this->url(null, ['action' => 'search'], true), ['class' => 'advanced-search']); ?>
 <?php echo $this->pagination(); ?>
