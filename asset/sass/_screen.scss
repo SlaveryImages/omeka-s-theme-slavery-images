@@ -316,7 +316,7 @@ header a {
 
 #search-container {
 	//display: none;
-    position: absolute;
+    position: relative;
     top: -(2 * $spacing-l);
     right: gutter();
 }
