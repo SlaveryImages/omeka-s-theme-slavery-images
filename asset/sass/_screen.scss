@@ -359,6 +359,7 @@ header a {
     height: 1.5 * $base-line-height;
     border-bottom: 0;
     color: darken($gray, 15%);
+    display: none;
 }
 
 #search-form.closed + .search-toggle {
@@ -682,6 +683,7 @@ footer {
 
 .page .media-render img {
     vertical-align: top;
+    max-width: 400px;
 }
 
 .left.file {
