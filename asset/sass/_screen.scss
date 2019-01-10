@@ -182,11 +182,6 @@ p {
     }
 }
 
-nav ul {
-    list-style-type: none;
-    display: inline-block;
-}
-
 /* @end */
 
 /* @group ----- Pagination ----- */
@@ -207,6 +202,12 @@ nav ul {
 /* @end */
 
 /* @group ----- Navigation ----- */
+
+
+nav ul {
+    list-style-type: none;
+ //   display: inline-block;
+}
 
 nav .navigation,
 nav ul {
@@ -278,8 +279,19 @@ header nav li {
     margin: 0 .5em;
 }
 
+
 header nav li ul {
     display: none;
+    position: absolute;     
+    background-color: white;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+}
+
+header nav li:hover ul {
+    display: block;
 }
 
 header nav a {
