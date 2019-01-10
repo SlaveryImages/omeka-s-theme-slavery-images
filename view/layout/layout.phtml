@@ -38,7 +38,9 @@ $userBar = $this->userBar();
                 </div>
                 <nav>
                 <?php
-                    echo $site->publicNav()->menu()->renderPartial(null, 'common/navbar.phtml');
+                echo $site->publicNav()->menu()->renderMenu(null, [
+                    'maxDepth' => $this->themeSetting('nav_depth') - 1
+                ]);
                 ?>
                 </nav>
             </header>
