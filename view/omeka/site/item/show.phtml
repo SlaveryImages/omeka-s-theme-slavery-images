@@ -13,7 +13,6 @@ function console_log( $data ){
 }
 
 console_log($itemMedia);
-
 ?>
 <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
 <?php $this->trigger('view.show.before'); ?>
@@ -43,9 +42,9 @@ console_log($itemMedia);
 
         <?php 
             $manifest_url = $this->iiifUrl($item) ;
-            $mirador_url = "http://mirador.britishart.yale.edu/?manifest=$manifest_url";
+            $mirador_url = $item->url();
         ?>
-        <a href="<?php echo $mirador_url; ?>" target="_blank"><img src="http://static.britishart.yale.edu/images/logo-iiif.png" alt="IIIF Manifest"></a>
+        <a href="<?php echo $mirador_url; ?>/mirador" target="_blank"><img src="http://static.britishart.yale.edu/images/logo-iiif.png" alt="IIIF Manifest"></a>
     <?php endforeach; ?>
 </div>
 
