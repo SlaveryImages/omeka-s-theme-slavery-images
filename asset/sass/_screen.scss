@@ -923,6 +923,10 @@ ul.resource-list .resource img ~ * {
     height: auto;
 }
 
+.resource.show .media-list a {
+    padding: 5px;
+}
+
 .resource.show .media-list .resource-name {
     display: none;
 }

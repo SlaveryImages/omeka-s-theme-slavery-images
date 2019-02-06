@@ -37,14 +37,19 @@ console_log($itemMedia);
 <?php if (!$embedMedia && $itemMedia): ?>
 <div class="media-list">
     <?php foreach ($itemMedia as $media): ?>
-        <?php console_log($media->linkPretty()); ?>
-        <?php echo $media->linkPretty('large'); ?>
-
         <?php 
             $manifest_url = $this->iiifUrl($item) ;
-            $mirador_url = $item->url();
+            $mirador_url = $item->url() . '/mirador';
         ?>
-        <a href="<?php echo $mirador_url; ?>/mirador" target="_blank"><img src="http://static.britishart.yale.edu/images/logo-iiif.png" alt="IIIF Manifest"></a>
+        <?php console_log($media->linkPretty()); ?>
+        <a href="<?php echo $mirador_url; ?>" target="_blank">
+          <?php echo $media->render(['link' => null]); ?>
+        </a>
+
+        <a href="<?php echo $manifest_url; ?>" target="_blank"><img src="<?php echo $this->assetUrl('images/logo-iiif.png') ?>" alt="IIIF Manifest">
+        </a>
+
+        <a href="<?php echo $media->originalUrl(); ?>"><img src="<?php echo $this->assetUrl('images/download.png') ?>" alt="Download"></a>
     <?php endforeach; ?>
 </div>
 
