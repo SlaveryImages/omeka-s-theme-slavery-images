@@ -41,15 +41,17 @@ console_log($itemMedia);
             $manifest_url = $this->iiifUrl($item) ;
             $mirador_url = $item->url() . '/mirador';
         ?>
-        <?php console_log($media->linkPretty()); ?>
-        <a href="<?php echo $mirador_url; ?>" target="_blank">
-          <?php echo $media->render(['link' => null]); ?>
-        </a>
-
-        <a href="<?php echo $manifest_url; ?>" target="_blank"><img src="<?php echo $this->assetUrl('images/logo-iiif.png') ?>" alt="IIIF Manifest">
-        </a>
-
-        <a href="<?php echo $media->originalUrl(); ?>"><img src="<?php echo $this->assetUrl('images/download.png') ?>" alt="Download"></a>
+        <?php console_log($media->linkPretty()); console_log($media->mediaType()); ?>
+        <?php if(preg_match('/\bimage\b/', $media->mediaType())):  ?>
+            <a href="<?php echo $mirador_url; ?>" target="_blank">
+              <?php echo $media->render(['link' => null]); ?>
+            </a>
+            <a href="<?php echo $manifest_url; ?>" target="_blank"><img src="<?php echo $this->assetUrl('images/logo-iiif.png') ?>" alt="IIIF Manifest">
+            </a>
+            <a href="<?php echo $media->originalUrl(); ?>"><img src="<?php echo $this->assetUrl('images/download.png') ?>" alt="Download"></a>
+        <?php else: ?>   
+            <?php $media->linkPretty(); ?>
+        <?php endif; ?>
     <?php endforeach; ?>
 </div>
 
