@@ -49,7 +49,9 @@ console_log($itemMedia);
             <a href="<?php echo $manifest_url; ?>" target="_blank"><img src="<?php echo $this->assetUrl('images/logo-iiif.png') ?>" alt="IIIF Manifest">
             </a>
             <a href="<?php echo $media->originalUrl(); ?>"><img src="<?php echo $this->assetUrl('images/download.png') ?>" alt="Download"></a>
-        <?php else: ?>   
+        <?php elseif(preg_match('/\bpdf\b/', $media->mediaType())): ?> 
+        <?php echo $media->render(); ?>
+        <?php else: ?> 
             <?php $media->linkPretty(); ?>
         <?php endif; ?>
     <?php endforeach; ?>
