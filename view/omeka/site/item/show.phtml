@@ -28,10 +28,10 @@ console_log($itemMedia);
 <div class="property">
     <?php $itemSets = $item->itemSets(); ?>
     <?php if (count($itemSets) > 0): ?>
-    <h4><?php echo $translate('Item sets'); ?></h4>
-    <?php foreach ($itemSets as $itemSet): ?>
-    <div class="value"><a href="<?php echo $escape($itemSet->url()); ?>"><?php echo $itemSet->displayTitle(); ?></a></div>
-    <?php endforeach; ?>
+        <h4><?php echo $translate('Item sets'); ?></h4>
+        <?php foreach ($itemSets as $itemSet): ?>
+            <div class="value"><a href="<?php echo $escape($itemSet->url()); ?>"><?php echo $itemSet->displayTitle(); ?></a></div>
+        <?php endforeach; ?>
     <?php endif; ?>
 </div>
 <?php if (!$embedMedia && $itemMedia): ?>
@@ -44,7 +44,7 @@ console_log($itemMedia);
         <?php console_log($media->linkPretty()); console_log($media->mediaType()); ?>
         <?php if(preg_match('/\bimage\b/', $media->mediaType())):  ?>
             <a href="<?php echo $mirador_url; ?>" target="_blank">
-              <?php echo $media->render(['link' => null]); ?>
+              <?php echo $media->render(['link' => null, 'thumbnailAttribs' => ['alt' => $item->displayDescription()]]); ?>
             </a>
             <a href="<?php echo $manifest_url; ?>" target="_blank"><img src="<?php echo $this->assetUrl('images/logo-iiif.png') ?>" alt="IIIF Manifest">
             </a>
