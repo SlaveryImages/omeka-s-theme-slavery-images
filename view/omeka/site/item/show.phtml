@@ -38,9 +38,10 @@ console_log($itemMedia);
     <h4>Citation</h4>
     <div class="values">
         <div class="value" lang="">
-            <?php echo $item->displayTitle() .
-                ", " . 
-                "Slavery Images: A Visual Record of the African Slave Trade and Slave Life in the Early African Diaspora, accessed " . 
+            <?php echo "\"" .
+                $item->displayTitle() .
+                "\", " . 
+                "<i>Slavery Images: A Visual Record of the African Slave Trade and Slave Life in the Early African Diaspora</i>, accessed " . 
                 date("F j, Y") .
                 ", " .
                 "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>
